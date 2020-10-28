@@ -56,7 +56,6 @@ S - Short/Small
 
 S - Simple
 
-
 Y - You
 
 A - Aren't
@@ -67,9 +66,14 @@ N - Need
 
 I - It
 
-
 # ACCESS MODIFIERS.
 
 ![icon][1]
 
 [1]:1.jpeg
+
+# DESIGN PATTERNS
+
+![icon][2]
+
+[2]:2.png
