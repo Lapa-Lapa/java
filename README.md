@@ -3,6 +3,7 @@
 + [ПРИНЦИПЫ ООП](#принципы-ооп)
 + [ПРИНЦИПЫ ООП (АББРЕВИАТУРЫ)](#принципы-ооп-аббревиатуры)
 + [ACCESS MODIFIERS](#access-modifiers)
++ [DESIGN PATTERNS](#design-patterns)
 
 # ПРИНЦИПЫ ООП.
 
