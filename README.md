@@ -1,6 +1,6 @@
 # Вопросы для собеседования на Java Software Test Automation Engineer
 
-+ [ООП](#ООП)
++ [ПРИНЦИПЫ ООП](#ПРИНЦИПЫ ООП)
 + [ПРИНЦИПЫ ООП (АББРЕВИАТУРЫ)](#ПРИНЦИПЫ ООП (АББРЕВИАТУРЫ))
 + [ACCESS MODIFIERS](#ACCESS MODIFIERS)
 
