@@ -22,15 +22,21 @@
 
 Полиморфизм (Polymorphism).
 1 method name a lot of implementations. (@Override)
+
 Interfaces: Metod implementation in each class can be customized.
+
 Classes: Использование одного и того же имени метода в классах унаследованных от одного (абстрактного) суперкласса.
 
 # ПРИНЦИПЫ ООП (АББРЕВИАТУРЫ)
 
 S - Single Responsibility
+
 O - Open/Closed
+
 L - Liskov Substitution
+
 I - Interface Segregation
+
 D - Dependency Inversion
 
 Single Responsibility - каждый объект должен иметь одну обязанность и она должна быть полностью инкапсулированная в класс, а все его сервисы должны быть напрвлены исключительно на обеспечение этой обязанности.
