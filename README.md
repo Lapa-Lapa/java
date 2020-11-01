@@ -11,16 +11,16 @@
 
 # ПРИНЦИПЫ ООП
 
-Абстракция (Abstaraction).
+• Абстракция (Abstaraction).
 Выделение существенных характеристик объекта и пренебрежение незначительными к контексте решаемой задачи.
 
-Инкапсуляция (Encapsulation).
+• Инкапсуляция (Encapsulation).
 Сокрытие реализации. Пример: это как машина с двумя педалями (тормоз, газ). Это как public методы для скрытой логики под капотом.
 
-Наследование (Inheritance).
+• Наследование (Inheritance).
 Наследуя класс, можно добавлять методы и свойства характерные только для наследника. В Java одиночное только, иначе Diamond Problem.
 
-Полиморфизм (Polymorphism).
+• Полиморфизм (Polymorphism).
 1 method name a lot of implementations. (@Override)
 
 Interfaces: Metod implementation in each class can be customized.
