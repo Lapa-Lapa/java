@@ -4,24 +4,24 @@
 + [ПРИНЦИПЫ ООП (АББРЕВИАТУРЫ)](#принципы-ооп-аббревиатуры)
 + [ACCESS MODIFIERS](#access-modifiers)
 + [PATTERNS](#patterns)
-+ [equals() VS "=="](#)
-+ [Interface VS Abstract Class](#)
-+ [PRIMITIVE TYPES](#)
-+ [FLOAT VS DOUBLE](#)
++ [equals() VS "=="](#equals-vs-)
++ [Interface VS Abstract Class](#interface-vs-abstract-class)
++ [PRIMITIVE TYPES](#primitive-types)
++ [FLOAT VS DOUBLE](#float-vs-double)
 
 # ПРИНЦИПЫ ООП
 
-• Абстракция (Abstaraction).
+• **Абстракция** (Abstaraction).
 Выделение существенных характеристик объекта и пренебрежение незначительными к контексте решаемой задачи.
 
-• Инкапсуляция (Encapsulation).
+• **Инкапсуляция** (Encapsulation).
 Сокрытие реализации. Пример: это как машина с двумя педалями (тормоз, газ). Это как public методы для скрытой логики под капотом.
 
-• Наследование (Inheritance).
+• **Наследование** (Inheritance).
 Наследуя класс, можно добавлять методы и свойства характерные только для наследника. В Java одиночное только, иначе Diamond Problem.
 
-• Полиморфизм (Polymorphism).
-1 method name a lot of implementations. (@Override)
+• **Полиморфизм** (Polymorphism).
+1 method name a lot of implementations. (**@Override**)
 
 Interfaces: Metod implementation in each class can be customized.
 
@@ -180,6 +180,6 @@ equals() - метод. Method for content comparison.
 
 
 
-Tricky questions:
+# Tricky questions:
 Можно ли создать объект абстрактного класса? - нет
 Can interface extends class? - yes. how many - one
