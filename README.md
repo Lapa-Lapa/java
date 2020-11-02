@@ -8,6 +8,11 @@
 + [Interface VS Abstract Class](#interface-vs-abstract-class)
 + [PRIMITIVE TYPES](#primitive-types)
 + [FLOAT VS DOUBLE](#float-vs-double)
++ [CI CD](#ci-cd)
++ [Version Control Systems](#version-control-systems)
++ [GIT advantages/disadvantages](#)
++ [Cognitive Complexity](#cognitive-complexity)
++ [Casting of objects in java](#casting-of-objects-in-java)
 
 # ПРИНЦИПЫ ООП
 
@@ -160,7 +165,7 @@ https://tortoisesvn.net/docs/release/TortoiseSVN_en/tsvn-basics-versioning.html
 
 https://homes.cs.washington.edu/~mernst/advice/version-control.html
 
-**GIT advantages/disadvantages:**
+# GIT advantages/disadvantages
 + Distributed
 + Free and Open Source
 + The most popular --> Community --> Q&A
@@ -170,9 +175,10 @@ https://homes.cs.washington.edu/~mernst/advice/version-control.html
 [GIT_1]:GIT_1.png
 
 https://git-scm.com/book/en/v2
+
 https://www.softwaretestinghelp.com/version-control-software/
 
-# Cognitive Complexity.
+# Cognitive Complexity
 
 ![icon][Complexity]
 
@@ -193,6 +199,7 @@ https://www.sonarsource.com/docs/CognitiveComplexity.pdf
 # Casting of objects in java
 
 ![icon][Cast]
+
 [Cast]:Cast.jpeg
 
 
