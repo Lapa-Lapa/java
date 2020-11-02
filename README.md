@@ -110,8 +110,9 @@ I - It
 
 # equals() VS "=="
 
-equals() - метод. Method for content comparison.
- "==" - оператор. Checks if both objects point to the same memory location.
+equals() - **метод**. Method for content comparison.
+
+ "==" - **оператор**. Checks if both objects point to the same memory location.
  
 # Interface VS Abstract Class
  
@@ -126,9 +127,11 @@ equals() - метод. Method for content comparison.
 [PRIMITIVE_TYPES]:PRIMITIVE_TYPES.png
 
 # FLOAT VS DOUBLE
- 
-float 32 bits - double 64 bits
+
+**float** 32 bits - **double** 64 bits
+
 7 знаков после запятой - 16 знаков после запятой
+
 https://javarush.ru/groups/posts/2136-ustroystvo-vejshestvennihkh-chisel
 
 # CI CD
@@ -136,8 +139,10 @@ https://javarush.ru/groups/posts/2136-ustroystvo-vejshestvennihkh-chisel
 **CI** - Continious Integration
 
 The key goals of continuous integration are:
-**1.**Improve software quality: to find and address bugs quicker.
-**2.**Reduce the time it takes to validate and release new software updates.
+
+**1.** Improve software quality: to find and address bugs quicker.
+
+**2.** Reduce the time it takes to validate and release new software updates.
 
 **CD** - Continious Delivery
 
