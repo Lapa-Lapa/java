@@ -138,7 +138,7 @@ https://javarush.ru/groups/posts/2136-ustroystvo-vejshestvennihkh-chisel
  
 **CI** - Continious Integration
 
-The key goals of continuous integration are:
+**The key goals of continuous integration are:**
 
 **1.** Improve software quality: to find and address bugs quicker.
 
