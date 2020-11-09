@@ -13,6 +13,9 @@
 + [GIT advantages/disadvantages](#)
 + [Cognitive Complexity](#cognitive-complexity)
 + [Casting of objects in java](#casting-of-objects-in-java)
++ [Преобразование типов](#преобразование-типов)
++ [Methods "Overload" VS @Override](#methods-overload-vs-override)
++ [Tricky questions](#tricky-questions)
 
 # ПРИНЦИПЫ ООП
 
@@ -332,18 +335,20 @@ https://www.javatpoint.com/method-overloading-vs-method-overriding-in-java
 
 
 # Tricky questions:
-Можно ли создать объект абстрактного класса? - нет
-Can interface extends class? - yes. how many - one
+
+**Можно ли создать объект абстрактного класса?** - нет
+
+**Can interface extends class?** - yes. how many - one
 
 
-Какие типы методов есть в джаве:
+**Какие типы методов есть в джаве:**
 
 + Стандартные, то есть написанные в стандартных библиотеках Java. Просто берешь нужный метод и используешь.
 
 + Пользовательские, то есть методы, которые Вы сами написали.
 
 
-Какие конструкторы есть:
+**Какие конструкторы есть:**
 
 + Явные (Явно прописывая конструктор, Вы получаете возможность регулировать, какие параметры и в каком количестве нужно задать для создания объекта определенного класса.)
 
@@ -353,7 +358,7 @@ Can interface extends class? - yes. how many - one
 
 + Перегруженные (с this() еще называют Copy constructor - Язык программирования Java позволяет осуществлять вызов конструкторов класса из другого конструктора этого же класса. Для этого используется ключевое слово this, которое есть ссылкой на текущий класс.)
 
-Сколько раз бефор отрабатывает? @Before (junit) annotation are executed before each test (No such annotation in TestNG = @BeforeMethod)
+**Сколько раз бефор отрабатывает?** @Before (junit) annotation are executed before each test (No such annotation in TestNG = @BeforeMethod)
  ![icon][tng]
 
 [tng]:tng.png
