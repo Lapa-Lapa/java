@@ -298,34 +298,100 @@ https://www.sonarsource.com/docs/CognitiveComplexity.pdf
 
 https://www.javatpoint.com/method-overloading-vs-method-overriding-in-java
 
+# Пирамида тестирования
 
+![icon][pyramid]
 
+[pyramid]:pyramid.png
 
+# Java Collection Framework (data structures)
 
+Супер подробно тут:
 
+https://github.com/Lapa-Lapa/java-interview/blob/master/jcf.md#java-collections-framework
 
+Queue (очередь) предназначена для хранения элементов с предопределённым способом вставки и извлечения FIFO (first-in-first-out)
 
+PriorityQueue — предоставляет возможность управлять порядком элементов в коллекции при помощи объекта Comparator, либо сохраняет элементы с использованием «natural ordering».
 
+ArrayDeque — реализация интерфейса Deque, который расширяет интерфейс Queue методами, позволяющими реализовать конструкцию вида LIFO (last-in-first-out).
 
+![icon][collections]
 
+[collections]:collections.png
 
+из лекции: https://www.youtube.com/watch?v=87pm79sPSvc&t=2155s
 
+Java Arrays
 
+String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
 
+Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.
 
+You access an array element by referring to the index number.
 
+String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+cars[0] = "Opel";
+System.out.println(cars[0]);
+// Now outputs Opel instead of Volvo
 
+Multidimensional Arrays
 
+int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7} };
 
+int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7} };
+int x = myNumbers[1][2];
+System.out.println(x); // Outputs 7
 
+https://www.w3schools.com/java/java_arrays.asp
 
+# LOCATORS
 
+![icon][locators]
 
+[locators]:locators.png
 
+http://internetka.in.ua/selenium-webdriver-findelement-by/
+http://internetka.in.ua/xpath-start-part1/
+http://internetka.in.ua/xpath-start-part2/
+http://internetka.in.ua/xpath-start-part3/
+http://internetka.in.ua/xpath-start4/
 
+# EXCEPTIONS
 
+![icon][Exceptions]
 
+[Exceptions]:Exceptions.png
 
+https://github.com/Lapa-Lapa/java-interview/blob/master/core.md#%D0%A7%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-checked-%D0%B8-unchecked-exception
+
+# Heap и Stack
+
+https://github.com/Lapa-Lapa/java-interview/blob/master/core.md#%D0%A7%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-heap-%D0%B8-stack-%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D1%8C-%D0%B2-java-%D0%9A%D0%B0%D0%BA%D0%B0%D1%8F-%D1%80%D0%B0%D0%B7%D0%BD%D0%B8%D1%86%D0%B0-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83-%D0%BD%D0%B8%D0%BC%D0%B8
+
+Например такая команда сделает heap 512MB:
+
+ -Xmx512m
+ 
+ ![icon][Task_1]
+
+[Task_1]:Task_1.png
+
+-Xms: It is used for setting the initial and minimum heap size.
+
+-Xmx: It is used for setting the maximum heap size.
+
+Other JVM commands list could be see after "java -X" execution:
+
+ ![icon][Task_2]
+
+[Task_2]:Task_2.png
+
+https://habr.com/ru/post/269707/
+
+https://docs.oracle.com/cd/E19900-01/819-4742/abeik/index.html
+
+https://alvinalexander.com/blog/post/java/java-xmx-xms-memory-heap-size-control/
 
 
 
@@ -335,6 +401,56 @@ https://www.javatpoint.com/method-overloading-vs-method-overriding-in-java
 
 
 # Tricky questions:
+
+**How can you automate custom mouse or keyboard actions in WebDriver?**
+
+package org.openqa.selenium.interactions;
+
+public class Actions{
+
+new Actions(WebDriverManager.getWebDriver()).moveToElement(getElement(), xOffset, yOffset).click().build().perform();
+
+**How can you execute JavaScript code in WebDriver?**
+
+String scriptResult = WebDriverUtils.callJavaScriptMethod("document.location");
+
+**How to create WebDriver instance? RemoteWebDriver parameters?**
+
+WebDriver webDriver = new ChromeDriver(ChromeOptions options);
+
+public class ChromeDriver implements WebDriver interface so WebDriver instance will be creted
+
+WebDriver driver = new RemoteWebDriver(URL remoteAddress, Capabilities capabilities);
+
+**What is Selenium Grid?**
+
+Selenium Grid is a testing tool which allows us to run our tests on different machines.
+
+We are starting it from console/terminal by command:
+
+java -jar selenium-server-standalone-2.53.0.jar -role hub -port 4444 -host 10.102.65.37
+
+After opening http://10.102.65.37:4444/grid/console we will see grid with devices what were connected as nodes.
+
+![icon][Grid]
+
+[Grid]:Grid.png
+
+When you execute your tests locally, the WebDriver client libraries talk to your Firefox Driver, IE Driver, or Chrome Driver directly. Now, when you try to execute your tests remotely, the WebDriver client libraries talk to the RemoteWebDriverserver and the server talks to either the Firefox Driver, IE Driver, or Chrome Driver, whichever the WebDriver client asks for.
+
+https://www.toolsqa.com/selenium-webdriver/selenium-grid/
+
+**What are typical steps to configure jobs in Jenkins?**
+Source Code Management - выбрать Git например, указать URL репозитория, креды, ветку для кода.
+Build Triggers - выбрать Build periodically
+
+CRON *(min 0-59) *(hour 0-23) *(day 1-31) *(month 1-12) *(day of week 0-7[6=Saturday 0,7=Sunday])
+
+*/5 * * * * - every 5 min
+
+0 */2 * * * - every 2 hours
+
+Post-build Actions - например залинковать вторую джобу, чтоб после билда тесты пошли например
 
 **Можно ли создать объект абстрактного класса?** - нет
 
@@ -362,3 +478,7 @@ https://www.javatpoint.com/method-overloading-vs-method-overriding-in-java
  ![icon][tng]
 
 [tng]:tng.png
+
+**Какая разница между регрессией и ретестингом?**
+Повторное тестирование - фокусируется только на ранее неудачных тестовых случаях, но не обеспечивает полную проверку каждой функции, которую должно предоставить приложение.(Худший вариант для автоматизации)
+Регресиионное тестирование - фокусируется на проверке, что свежие изменения в коде или приложении в целом не оказали негативного влияния на уже существующую функциональность/набор функций.(Идеально автотатизировать такие кейсы)
