@@ -15,6 +15,12 @@
 + [Casting of objects in java](#casting-of-objects-in-java)
 + [Преобразование типов](#преобразование-типов)
 + [Methods "Overload" VS @Override](#methods-overload-vs-override)
++ [Пирамида тестирования](#пирамида-тестирования)
++ [Java Collection Framework (data structures)](#java-collection-framework-data-structures)
++ [LOCATORS](#locators)
++ [EXCEPTIONS](#exceptions)
++ [Heap и Stack](#heap-и-stack)
++ [final, finally and finalize in Java]()
 + [Tricky questions](#tricky-questions)
 
 # ПРИНЦИПЫ ООП
@@ -124,13 +130,12 @@ equals() - **метод**. Method for content comparison.
 ![icon][Interface_VS_Abstract_Class]
 
 [Interface_VS_Abstract_Class]:Interface_VS_Abstract_Class.png
-![icon][Interface_VS_Abstract_Class_1]
-
-[Interface_VS_Abstract_Class_1]:Interface_VS_Abstract_Class.png
 
 https://www.javatpoint.com/difference-between-abstract-class-and-interface
  
 # PRIMITIVE TYPES
+
+Параметры  в методы будь то примитивы или их Wrapper(ы) копируются значения (всегда работают как примитивы)
  
 ![icon][PRIMITIVE_TYPES]
 
@@ -369,6 +374,41 @@ https://github.com/Lapa-Lapa/java-interview/blob/master/core.md#%D0%A7%D1%82%D0%
 
 https://github.com/Lapa-Lapa/java-interview/blob/master/core.md#%D0%A7%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-heap-%D0%B8-stack-%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D1%8C-%D0%B2-java-%D0%9A%D0%B0%D0%BA%D0%B0%D1%8F-%D1%80%D0%B0%D0%B7%D0%BD%D0%B8%D1%86%D0%B0-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83-%D0%BD%D0%B8%D0%BC%D0%B8
 
+Куча используется всеми частями приложения в то время как стек используется только одним потоком исполнения программы.
+Т.к. У каждого потока своя Stack память.
+
+Всякий раз, когда создается объект, он всегда хранится в куче(он общий на все потоки), а в памяти стека содержится лишь ссылка на него. Память стека содержит только локальные переменные примитивных типов и ссылки на объекты в куче.
+
+В дебаге методы это стек.(Блинчики LIFO)
+
+java.lang.StackOverflowError - для Stack (в RAM - общей оперативной памяти)
+
+        /**
+         * java.lang.StackOverflowError
+         */
+        try {
+            recursion(true);
+        } catch (StackOverflowError error) {
+            LOGGER.error(ExceptionUtils.getStackTrace(error));
+        }
+		
+    private static void recursion(Boolean bolean) {
+        if (bolean) {
+            recursion(bolean);
+        }
+    }
+
+java.lang.OutOfMemoryError - для Heap
+
+        /**
+         * java.lang.OutOfMemoryError: Requested array size exceeds VM limit
+         */
+        try {
+            int[] arr = new int[Integer.MAX_VALUE];//((2в31степени)-1)= 2 147 483 647
+        } catch (OutOfMemoryError error) {
+            LOGGER.error(ExceptionUtils.getStackTrace(error));
+        }
+
 Например такая команда сделает heap 512MB:
 
  -Xmx512m
@@ -393,14 +433,51 @@ https://docs.oracle.com/cd/E19900-01/819-4742/abeik/index.html
 
 https://alvinalexander.com/blog/post/java/java-xmx-xms-memory-heap-size-control/
 
+# Waits
 
+Implicit Wait (НЕЯВНЫЕ)
 
+WebDriver driver = new ChromeDriver();
+new ChromeDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
+Explicit Wait (ЯВНЫЕ) - когда понятно чего хочет EX
+
+WebDriverWait webDriverWait = new WebDriverWait(driver, TIMEOUT_SECONDS);
+
+webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement));
+
+https://www.selenium.dev/documentation/en/webdriver/waits/
+
+# final, finally and finalize in Java
+
+**final keyword**
+
+1. final with Variables : The value of variable cannot be changed once initialized.
+
+2. final with Class : The class cannot be subclassed. Whenever we declare any class as final, it means that we can’t extend that class or that class can’t be extended or we can’t make subclass of that class.
+
+**finally keyword**
+
++ used in association with a try/catch block and guarantees that a section of code will be executed
+
+**finalize method**
+
++ It is a method that the Garbage Collector always calls just before the deletion/destroying the object
+
+https://www.geeksforgeeks.org/g-fact-24-finalfinally-and-finalize-in-java/?ref=lbp
 
 
 
 
 # Tricky questions:
+
+**Что такое селениум вебдрайвер?**
+
+Selenium WebDriver — это инструмент для автоматизации действий веб-браузера.
+
+С драйвером пользователи не работают непосредственно. Они работают с прикладными программами, которые, посредством драйверов, взаимодействуют с теми или иными устройствами.
+
+https://habr.com/ru/post/152971/
 
 **How can you automate custom mouse or keyboard actions in WebDriver?**
 
